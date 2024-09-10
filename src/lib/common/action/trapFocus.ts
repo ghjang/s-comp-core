@@ -1,4 +1,4 @@
-import { as } from "../util";
+import { as } from "../util/util.js";
 
 interface TrapFocusAction {
   destroy(): void;

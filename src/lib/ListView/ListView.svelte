@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { camelToKebab } from "../common/util.js";
+  import { camelToKebab } from "../common/util/util.js";
   import IndexedDBManager from "../common/data/IndexedDBManager.js";
   import type { Store, Header, Row, StyleProps } from "./types.js";
 

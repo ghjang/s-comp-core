@@ -1,0 +1,96 @@
+$border-color: gray;
+$shadow-color: rgba(0, 0, 0, 0.5);
+$background-color: lightgray;
+
+.splitter-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: $background-color;
+  box-shadow: 0 0 5px $shadow-color;
+
+  .content-panel {
+    overflow: hidden;
+  }
+
+  .divider-panel {
+    display: flex;
+    justify-content: center;
+    background: $border-color;
+    box-shadow: 0 0 10px $shadow-color;
+
+    .divider-grip {
+      background: $border-color;
+      box-sizing: border-box;
+    }
+
+    .divider-grip-content {
+      &.panel-collapse {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+          padding: 0;
+          width: 12px;
+          height: 12px;
+          font-size: 0.01em;
+          user-select: none;
+        }
+      }
+    }
+  }
+}
+
+/*
+  'design' 모드에서 스플릿터 패널 크기 변경시 각 패널의 보더와 크기 정보를 '가상 요소 before와 after'를 이용하여 표시
+  '동적으로 추가되는 HTML 요소'의 경우에 '스벨트의 CSS 스코핑' 문제로 제대로 CSS 스타일링이 적용되지 않는 것으로 보여서
+  ':global' 을 이용하여 전역 스코프에서 스타일링을 적용하였다.
+ */
+:global(.s-comp-splitter-panel-with-border) {
+  position: relative;
+
+  /* 패널의 보더 표시 */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: var(--panel-border-width) var(--panel-border-style)
+      var(--panel-border-color);
+    background-color: color-mix(
+      in srgb,
+      var(--panel-border-color) 10%,
+      transparent
+    );
+    pointer-events: none;
+    z-index: 9997;
+  }
+
+  /* 패널의 크기 정보 표시 */
+  &::after {
+    content: var(--panel-size-content);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightcoral;
+    color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 9998;
+  }
+}

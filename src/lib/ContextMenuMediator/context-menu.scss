@@ -1,0 +1,8 @@
+$context-menu-background-color: #444;
+$context-menu-hover-background-color: lighten(
+  $context-menu-background-color,
+  10%
+);
+$context-menu-border-color: #ccc;
+$context-menu-box-shadow: 0 0 2px #aaa;
+$context-menu-text-color: #fff;
