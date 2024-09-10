@@ -60,7 +60,8 @@
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*",
-		"static"
+		"static",
+		"CHANGELOG.md"
 	],
 	"peerDependencies": {
 		"svelte": "^4.0.0"
