@@ -1,6 +1,20 @@
 {
 	"name": "s-comp-core",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"license": "MIT",
+	"author": "ghjang",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ghjang/s-comp-core.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ghjang/s-comp-core/issues"
+	},
+	"keywords": [
+		"svelte",
+		"components",
+		"ui"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
