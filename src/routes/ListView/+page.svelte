@@ -1,5 +1,6 @@
 <script lang="ts">
-    import ListView from '$lib/ListView/ListView.svelte';
+	import ListView from '$lib/ListView/ListView.svelte';
+	import { testHeader, testItems } from './test_data.js';
 </script>
 
-<ListView />
+<ListView header={testHeader} items={testItems} />

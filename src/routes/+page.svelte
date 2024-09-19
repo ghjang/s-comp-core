@@ -8,6 +8,12 @@
 		</ul>
 	</li>
 	<li>
+		Bubble
+		<ul>
+			<li><a href="Bubble">Bubble</a></li>
+		</ul>
+	</li>
+	<li>
 		ListView
 		<ul>
 			<li><a href="ListView">ListView</a></li>
