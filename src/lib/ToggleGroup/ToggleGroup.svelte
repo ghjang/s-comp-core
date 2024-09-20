@@ -4,7 +4,7 @@
   import ComponentLoader from "../ComponentLoader/ComponentLoader.svelte";
   import StackPanel from "../Layout/StackPanel.svelte";
   import type { Direction, HAlign, VAlign } from "../Layout/types.js";
-  import { type ToggleGroupContext } from "./types.js";
+  import type { ToggleGroupContext, ToggleItem } from "./types.js";
 
   type ToggleGroupEvents = {
     toggleItemChanged: { value: any; itemIndex: number };
@@ -18,8 +18,8 @@
   export let hAlign: HAlign = "left";
   export let vAlign: VAlign = "top";
   export let trapFocus: boolean = false;
-  export let defaultItemProps: Record<string, any> = {};
-  export let items: Array<Record<string, any>> = [];
+  export let defaultItemProps: Record<string, unknown> = {};
+  export let items: Array<ToggleItem> = [];
 
   const contextName = "toggle-group-context";
   const context: Writable<ToggleGroupContext> = initContext(contextName);
@@ -52,7 +52,7 @@
 
   async function loadComponents(
     loader: ComponentLoader,
-    targetItems: Array<Record<string, any>>,
+    targetItems: Array<ToggleItem>,
   ): Promise<void> {
     if (!loader) {
       return;
@@ -73,7 +73,7 @@
     isAllComponentsLoaded = true;
   }
 
-  function renderComponents(targetItems: Array<Record<string, any>>): void {
+  function renderComponents(targetItems: Array<ToggleItem>): void {
     for (let i = 0; i < targetItems.length; ++i) {
       const item = targetItems[i];
 

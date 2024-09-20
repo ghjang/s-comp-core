@@ -1,3 +1,5 @@
 export interface ToggleGroupContext {
-  activatedValue: any;
+  activatedValue: unknown;
 }
+
+export type ToggleItem = Record<string, unknown>;

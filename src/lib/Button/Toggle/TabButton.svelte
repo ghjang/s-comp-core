@@ -2,15 +2,15 @@
 	import { createEventDispatcher, getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import type { ToggleGroupContext } from '../../ToggleGroup/types.js';
-	import type { ToggleButtonEvent, ToggleItemInfo } from './types.js';
+	import type { ToggleButtonEvent, ToggleButtonInfo } from './types.js';
 
 	type TabPosition = 'top' | 'bottom' | 'left' | 'right';
 
-	type DeleteButtonClickHandler = (label: string, value: any) => void;
+	type DeleteButtonClickHandler = (label: string, value: unknown) => void;
 
 	type TabButtonEvent = ToggleButtonEvent & {
-		tabClicked: ToggleItemInfo;
-		tabDeleteButtonClicked: ToggleItemInfo;
+		tabClicked: ToggleButtonInfo;
+		tabDeleteButtonClicked: ToggleButtonInfo;
 	};
 
 	const dispatch = createEventDispatcher<TabButtonEvent>();
