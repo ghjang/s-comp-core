@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import ToggleGroup from '../ToggleGroup/ToggleGroup.svelte';
+	import TabButton from '../Button/Toggle/TabButton.svelte';
 	import type { Tab, TabPosition, TabDirection, TabHAlign, TabVAlign } from './types.js';
 	import type { ToggleItem } from '../ToggleGroup/types.js';
 
@@ -33,7 +34,7 @@
 
 			tabs.forEach((item: Tab, index: number) => {
 				const itemCopy: ToggleItem = { ...item };
-				itemCopy.component = 'TabButton';
+				itemCopy.component = TabButton;
 				itemCopy.tabPosition = tabPosition;
 				delete itemCopy.componentClassName;
 				delete itemCopy.props;

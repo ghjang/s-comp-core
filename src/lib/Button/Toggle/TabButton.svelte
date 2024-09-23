@@ -3,8 +3,7 @@
 	import type { Writable } from 'svelte/store';
 	import type { ToggleGroupContext } from '../../ToggleGroup/types.js';
 	import type { ToggleButtonEvent, ToggleButtonInfo } from './types.js';
-
-	type TabPosition = 'top' | 'bottom' | 'left' | 'right';
+	import type { TabPosition } from '$lib/Tab/types.js';
 
 	type DeleteButtonClickHandler = (label: string, value: unknown) => void;
 

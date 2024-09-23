@@ -1,2 +1,2 @@
-export * from './util.dom.js';
+export * from './client/dom.js';
 export * from './util.js';

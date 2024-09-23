@@ -12,7 +12,7 @@
 
   const dispatch = createEventDispatcher<ToggleGroupEvents>();
 
-  export let activatedValue: any = null;
+  export let activatedValue: unknown = null;
   export let direction: Direction = "vertical";
   export let reverse: boolean = false;
   export let hAlign: HAlign = "left";

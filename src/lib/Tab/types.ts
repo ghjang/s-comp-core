@@ -2,8 +2,8 @@ import type { ComponentType } from 'svelte';
 
 export interface Tab {
 	label: string;
-	component: ComponentType | null | undefined;
-	componentClassName: string;
+	component?: ComponentType | null | undefined;
+	componentClassName?: string;
 	props?: Record<string, unknown>;
 }
 

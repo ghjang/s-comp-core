@@ -10,7 +10,7 @@
 	import PopUp from '../PopUp/PopUp.svelte';
 	import { PopUpKind } from '../PopUp/PopUpKind.js';
 	import { PopUpManager } from '../PopUp/util.js';
-	import { findClosestAncestor } from '../common/util/util.dom.js';
+	import { findClosestAncestor } from '../common/util/client/dom.js';
 	import { CustomEventsRegister, combineCustomEvents } from '../common/customEvents.js';
 	import type { MenuItem } from '../ContextMenuMediator/types.js';
 	import type { Tab, TabPosition, TabDirection, TabHAlign, TabVAlign } from './types.js';
@@ -65,7 +65,7 @@
 						selectedTabIndex
 					};
 				},
-				(callback: (info: any) => void) => {
+				async (callback: (info: any) => void) => {
 					// 'queryContainerInfo' 이벤트 발생시 'callback'으로 값 전달
 					const ancestorElem = as<HTMLElement>(findClosestAncestor(tabView, 'floor-container'));
 					if (ancestorElem) {

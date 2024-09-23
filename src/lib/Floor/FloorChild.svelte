@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher, onDestroy } from "svelte";
   import { CustomEventsRegister } from "../common/customEvents.js";
   import {
