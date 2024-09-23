@@ -13,7 +13,7 @@
 	import { findClosestAncestor } from '../common/util/client/dom.js';
 	import { CustomEventsRegister, combineCustomEvents } from '../common/customEvents.js';
 	import type { MenuItem } from '../ContextMenuMediator/types.js';
-	import type { Tab, TabPosition, TabDirection, TabHAlign, TabVAlign } from './types.js';
+	import type { TabItem, TabPosition, TabDirection, TabHAlign, TabVAlign } from './types.js';
 
 	type TabEvents = {
 		tabSelected: {
@@ -27,7 +27,7 @@
 	const dispatch = createEventDispatcher<TabEvents>();
 
 	// FIXME: 다수의 '탭'들이 추가될 경우 탭이 잘려서 표시되거나 아예 보이지 않음.
-	export let tabs: Tab[] = [];
+	export let tabs: TabItem[] = [];
 	export let selectedTabIndex = 0;
 	export let tabPosition: TabPosition = 'top';
 	export let showContentControl = false;
@@ -236,7 +236,7 @@
 		return `${lastTabLabel} ${tabs.length + 1}`;
 	}
 
-	async function handleAddNewTab(): Promise<Tab | null> {
+	async function handleAddNewTab(): Promise<TabItem | null> {
 		if (!(tabComponents[0] instanceof Floor)) {
 			return null;
 		}
@@ -246,7 +246,7 @@
 		const scriptBasePath = tabComponents[0].getComponentScriptBasePath();
 		const items = tabComponents[0].getMenuItems();
 
-		const newTabChildComponentInfo: Tab = {
+		const newTabChildComponentInfo: TabItem = {
 			label: newTabLabel,
 			component: Floor,
 			componentClassName: 'Floor',

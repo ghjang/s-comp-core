@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import ToggleGroup from '../ToggleGroup/ToggleGroup.svelte';
 	import TabButton from '../Button/Toggle/TabButton.svelte';
-	import type { Tab, TabPosition, TabDirection, TabHAlign, TabVAlign } from './types.js';
+	import type { TabItem, TabPosition, TabDirection, TabHAlign, TabVAlign } from './types.js';
 	import type { ToggleItem } from '../ToggleGroup/types.js';
 
 	type TabButtonGroupEvents = {
@@ -13,7 +13,7 @@
 
 	const dispatch = createEventDispatcher<TabButtonGroupEvents>();
 
-	export let tabs: Tab[] = [];
+	export let tabs: TabItem[] = [];
 	export let selectedTabIndex = 0;
 	export let tabPosition: TabPosition = 'top';
 	export let showContentControl = false;
@@ -28,11 +28,11 @@
 
 	$: updateTabs(tabs, selectedTabIndex, tabPosition);
 
-	function updateTabs(tabs: Tab[], selectedTabIndex: number, tabPosition: TabPosition) {
+	function updateTabs(tabs: TabItem[], selectedTabIndex: number, tabPosition: TabPosition) {
 		if (tabs && tabs.length > 0) {
 			tabItems.length = 0;
 
-			tabs.forEach((item: Tab, index: number) => {
+			tabs.forEach((item: TabItem, index: number) => {
 				const itemCopy: ToggleItem = { ...item };
 				itemCopy.component = TabButton;
 				itemCopy.tabPosition = tabPosition;

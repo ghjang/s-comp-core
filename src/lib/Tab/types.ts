@@ -1,6 +1,6 @@
 import type { ComponentType } from 'svelte';
 
-export interface Tab {
+export interface TabItem {
 	label: string;
 	component?: ComponentType | null | undefined;
 	componentClassName?: string;
