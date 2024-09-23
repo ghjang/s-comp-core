@@ -1,5 +1,9 @@
 # s-comp-core Changelog
 
+## [0.1.3] - 2024-09-23
+
+- Fixed broken export of ComponentLoader
+
 ## [0.1.2] - 2024-09-23
 
 ### Added
