@@ -2,7 +2,6 @@ import Book from './Book/Book.svelte';
 import Bubble from './Bubble/Bubble.svelte';
 import Calendar from './Calendar/Calendar.svelte';
 import Card from './Card/Card.svelte';
-import ComponentLoader from './ComponentLoader/ComponentLoader.svelte';
 import Console from './Console/Console.svelte';
 import ContextMenuMediator from './ContextMenuMediator/ContextMenuMediator.svelte';
 import DataStore from './DataStore/DataStore.svelte';

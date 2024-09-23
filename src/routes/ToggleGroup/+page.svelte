@@ -60,7 +60,7 @@
 						vAlign="bottom"
 						trapFocus={true}
 						defaultItemProps={createTabButtonProps('top')}
-						items={tabButtonItems}
+						items={[...tabButtonItems]}
 						on:toggleItemChanged={handleTabItemChanged}
 					/>
 				</div>
