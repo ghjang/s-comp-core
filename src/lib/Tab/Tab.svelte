@@ -16,6 +16,9 @@
 	import type { Tab, TabPosition, TabDirection, TabHAlign, TabVAlign } from './types.js';
 
 	type TabEvents = {
+		tabSelected: {
+			tabIndex: number;
+		};
 		updateChildComponentInfo: {
 			updateCallback: (childComponentInfo: unknown) => void;
 		};
@@ -341,6 +344,7 @@
 	function handleTabSelected(event: CustomEvent<{ tabIndex: number }>): void {
 		const { tabIndex } = event.detail;
 		selectedTabIndex = tabIndex;
+		dispatch('tabSelected', { tabIndex });
 	}
 
 	function handleTabDeleteButtonClicked(event: CustomEvent<{ tabIndex: number }>): void {
